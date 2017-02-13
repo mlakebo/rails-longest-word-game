@@ -1,0 +1,16 @@
+<h1>Game#index</h1>
+<p>Find me in app/views/game/index.html.erb</p>
+
+<h1><%= @grid %></h1>
+
+<% start_time = Time.now %>
+
+<!-- the HTML form to write your guess just below the word-grid. -->
+<form action="/game/score">
+  <input type="text" id="attempt" name="attempt" placeholder="your word">
+  <input type="hidden" name="start_time" value="<%= start_time %>">
+  <input type="hidden" name="grid" value="<%= @grid %>">
+  <input type="submit" value="Go on!">
+</form>
+
+<%= @debug %>
